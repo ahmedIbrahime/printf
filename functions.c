@@ -109,7 +109,7 @@ return (_putchar('%'));
 }
 
 /**
- * print_S - custom format specifier
+ * pr_S - custom format specifier
  * @params: params struct
  * @args: list of arguments.
  *
