@@ -29,7 +29,7 @@ char_pr += _putchar((ch / 16) < 10 ? (ch / 16) + '0' : (ch / 16) - 10 + 'A');
 char_pr += _putchar((ch % 16) < 10 ? (ch % 16) + '0' : (ch % 16) - 10 + 'A');
 }
 
-return char_pr;
+return (char_pr);
 }
 
 /**
@@ -41,15 +41,15 @@ return char_pr;
  */
 int pr_int(va_list args, params_t *params)
 {
-long long ll;
+long l;
 
 if (params->l_mod)
-ll = va_arg(args, long);
+l = va_arg(args, long);
 else if (params->h_mod)
-ll = (short int)va_arg(args, int);
+l = (short int)va_arg(args, int);
 else
-ll = (int)va_arg(args, int);
-return (print_number(convert(ll, 10, 0, params), params));
+l = (int)va_arg(args, int);
+return (print_number(convert(l, 10, 0, params), params));
 }
 
 /**
