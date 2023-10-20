@@ -77,7 +77,7 @@ return (n);
 }
 
 /**
- * print_number_left_shift -print a number with option .
+ * print_number_left_shift -print a number with option.
  * @str: the base number of the string.
  * @params: the parameter struct.
  *
