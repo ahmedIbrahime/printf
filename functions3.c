@@ -1,7 +1,7 @@
 #include "main.h"
 /**
  * pr_from_to - prints range of char address.
- * @start: starting address.
+ * @start: starting address
  * @stop: endning address.
  * @expt: expected adress.
  *
