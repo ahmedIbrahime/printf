@@ -53,14 +53,14 @@ return (char_pr);
  */
 int pr_rot13(va_list args, params_t *params)
 {
-int i = 0;
-int index = 0;
+int i, index;
 int count = 0;
 char arr[] =
 "NOPQRSTUVWXYZABCDEFGHIJKLM             nopqrstuvwxyzabcdefghijklm";
 char *a = va_arg(args, char *);
 (void)params;
-
+i = 0;
+index = 0;
 while (a[i])
 {
 if ((a[i] >= 'A' && a[i] <= 'Z')

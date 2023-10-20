@@ -14,21 +14,10 @@ unsigned int pad = 1, char_pr = 0, ch = va_arg(args, int);
 
 if (params->minus_f)
 char_pr += _putchar(ch);
-if (isprint(ch) || ch == '\n' || ch == '\t')
-{
 while (pad++ < params->width)
 char_pr += _putchar(pad_char);
 if (!params->minus_f)
 char_pr += _putchar(ch);
-}
-else
-{
-char_pr += _putchar('\\');
-char_pr += _putchar('x');
-char_pr += _putchar((ch / 16) < 10 ? (ch / 16) + '0' : (ch / 16) - 10 + 'A');
-char_pr += _putchar((ch % 16) < 10 ? (ch % 16) + '0' : (ch % 16) - 10 + 'A');
-}
-
 return (char_pr);
 }
 
@@ -65,7 +54,7 @@ char *str = va_arg(args, char *), pad_char = ' ';
 unsigned int pad = 0, char_pr = 0, i = 0, j;
 
 (void)params;
-switch ((int)!str)
+switch ((int)(!str))
 case 1:
 str = NULL_STR;
 
