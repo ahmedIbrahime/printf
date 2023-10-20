@@ -53,7 +53,7 @@ return (char_pr);
  */
 int pr_rot13(va_list args, params_t *params)
 {
-int i,index;
+int i, index;
 int count = 0;
 char arr[] =
 "NOPQRSTUVWXYZABCDEFGHIJKLM             nopqrstuvwxyzabcdefghijklm";
