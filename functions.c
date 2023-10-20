@@ -14,11 +14,22 @@ unsigned int pad = 1, char_pr = 0, ch = va_arg(args, int);
 
 if (params->minus_f)
 char_pr += _putchar(ch);
+if (isprint(ch) || ch == '\n' || ch == '\t')
+{
 while (pad++ < params->width)
 char_pr += _putchar(pad_char);
 if (!params->minus_f)
 char_pr += _putchar(ch);
-return (char_pr);
+}
+else
+{
+char_pr += _putchar('\\');
+char_pr += _putchar('x');
+char_pr += _putchar((ch / 16) < 10 ? (ch / 16) + '0' : (ch / 16) - 10 + 'A');
+char_pr += _putchar((ch % 16) < 10 ? (ch % 16) + '0' : (ch % 16) - 10 + 'A');
+}
+
+return char_pr;
 }
 
 /**
@@ -30,15 +41,15 @@ return (char_pr);
  */
 int pr_int(va_list args, params_t *params)
 {
-long l;
+long long ll;
 
 if (params->l_mod)
-l = va_arg(args, long);
+ll = va_arg(args, long);
 else if (params->h_mod)
-l = (short int)va_arg(args, int);
+ll = (short int)va_arg(args, int);
 else
-l = (int)va_arg(args, int);
-return (print_number(convert(l, 10, 0, params), params));
+ll = (int)va_arg(args, int);
+return (print_number(convert(ll, 10, 0, params), params));
 }
 
 /**
@@ -54,7 +65,7 @@ char *str = va_arg(args, char *), pad_char = ' ';
 unsigned int pad = 0, char_pr = 0, i = 0, j;
 
 (void)params;
-switch ((int)(!str))
+switch ((int)!str)
 case 1:
 str = NULL_STR;
 
