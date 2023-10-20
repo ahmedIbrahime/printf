@@ -23,12 +23,12 @@
 /**
  * struct parameters - parameters.
  * @unsign: unsign.
- * @plus_f: plus_F.
- * @space_f: space_F
- * @hashtag_f: hashtag_F
- * @zero_f: zero_F
- * @minus_f: plus_F
- * @width: width
+ * @plus_f: plus_f.
+ * @space_f: space_F.
+ * @hashtag_f: hashtag_F.
+ * @zero_f: zero_F.
+ * @minus_f: plus_F.
+ * @width: width.
  * @precision: precision
  * @h_mod: h_mod
  * @l_mod: l_mod
